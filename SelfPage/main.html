@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Don't Give a Fuck</title>
+    <style>
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            z-index: 3;
+        }
+
+
+        .side .title {
+            color: rgb(255, 255, 255);
+            font-family: "Rubik", sans-serif;
+            font-size: 8vw;
+            margin: 0px 15vw;
+            width: 70vw;
+        }
+
+        .side {
+            height: 100vh;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        #left-side {
+            background-color: rgb(0, 0, 0);
+            z-index: 2;
+        }
+
+        #right-side {
+            background-color: rgb(64, 75, 101);
+        }
+
+        #left-side .title {
+            color: white;
+        }
+
+        #left-side .fancy {
+            color: rgb(64, 75, 101);
+            font-family: "Lobster", cursive;
+            font-size: 1.3em;
+            line-height: 0.8em;
+        }
+
+        #right-side .title {
+            color: black;
+        }
+
+        #right-side .fancy {
+            color: white;
+            font-family: "Lobster", cursive;
+            font-size: 1.3em;
+            line-height: 0.8em;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav .a,
+        .nav .b,
+        .nav .c,
+        .nav .d {
+            color: rgb(255, 255, 255);
+            /* Change to the color you prefer */
+        }
+
+
+
+        .nav .a:hover {
+            color: rgb(204, 213, 245);
+        }
+
+        .nav .b:hover {
+            color: rgb(204, 213, 245);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="nav">
+        <a class="a" href="bang!.html" style="text-decoration: none;padding: 1vw;">Home</a>
+        <a class="b" href="https://www.instagram.com/_zhenyu__/"
+            style="text-decoration: none;padding: 0 1vw;">Instagram</a>
+        <a class="c" href="https://github.com/jhenyulin" style="text-decoration: none;padding: 0 1vw;">Github</a>
+        <a class="d" href="Login.html" style="text-decoration: none;padding: 0 1vw;">Login</a>
+    </header>
+
+
+
+    <div id="left-side" class="side">
+        <h2 class="title">Today is going to be <span class="fancy">awesome</span></h2>
+    </div>
+    <div id="right-side" class="side">
+        <h2 class="title">Today is going to be <span class="fancy">fuckup</span></h2>
+    </div>
+
+    <script>
+        const left = document.getElementById("left-side");
+
+        const handleOnMove = e => {
+            const p = e.clientX / window.innerWidth * 100;
+            left.style.width = `${p}%`;
+        }
+
+        document.onmousemove = e => handleOnMove(e);
+
+        document.ontouchmove = e => handleOnMove(e.touches[0]);
+    </script>
+</body>
+
+</html>
